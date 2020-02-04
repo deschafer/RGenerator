@@ -10,7 +10,7 @@ public class GameScene extends Scene
 	@Override
 	public void initialize()
 	{
-		gameWorld = new GameWorld();
+		gameWorld = new GameWorld(this);
 	}
 
 	@Override

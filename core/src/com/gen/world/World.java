@@ -5,6 +5,8 @@ import com.badlogic.gdx.graphics.g3d.Environment;
 import com.badlogic.gdx.graphics.g3d.ModelBatch;
 import com.gen.game.RGenerator;
 import com.gen.object.GameObject;
+import com.gen.object.GameObject3D;
+import com.gen.scene.Scene;
 
 import java.util.ArrayList;
 
@@ -13,13 +15,15 @@ public class World
 	protected ModelBatch modelBatch;
 	protected Environment environment;
 	protected PerspectiveCamera perspectiveCamera;
+	private Scene parentScene;
 	private ArrayList<GameObject> gameObjects;
 
 	private final static int FOV = 80;
 
-	public World()
+	public World(Scene parentScene)
 	{
 		gameObjects = new ArrayList<>();
+		this.parentScene = parentScene;
 
 		initCamera();
 		initEnvironment();
@@ -52,7 +56,7 @@ public class World
 	{
 		for (GameObject object : gameObjects)
 		{
-			// object->update(delta);
+			object.update(delta);
 		}
 	}
 
@@ -61,8 +65,23 @@ public class World
 		modelBatch.begin(perspectiveCamera);
 		for (GameObject object : gameObjects)
 		{
-			// get a render component and draw it
+			// if this object is renderable
+			if (object instanceof GameObject3D)
+			{
+				GameObject3D object3D = (GameObject3D)object;
+				object3D.render(modelBatch);
+			}
 		}
 		modelBatch.end();
+	}
+
+	public void addGameObject(GameObject object)
+	{
+		gameObjects.add(object);
+	}
+
+	public void removeGameObject(GameObject object)
+	{
+		gameObjects.remove(object);
 	}
 }
