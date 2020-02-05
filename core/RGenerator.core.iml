@@ -18,5 +18,6 @@
     <orderEntry type="library" name="Gradle: com.badlogicgames.ashley:ashley:1.7.0" level="project" />
     <orderEntry type="library" name="Gradle: com.badlogicgames.gdx:gdx-bullet:1.9.10" level="project" />
     <orderEntry type="library" name="Gradle: com.badlogicgames.gdx:gdx:1.9.10" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.code.gson:gson:2.8.6" level="project" />
   </component>
 </module>

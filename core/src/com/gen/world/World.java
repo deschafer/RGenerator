@@ -84,4 +84,14 @@ public class World
 	{
 		gameObjects.remove(object);
 	}
+
+	public Scene getParentScene()
+	{
+		return parentScene;
+	}
+
+	public PerspectiveCamera getCamera()
+	{
+		return perspectiveCamera;
+	}
 }

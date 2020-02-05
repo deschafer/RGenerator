@@ -63,9 +63,6 @@ public class FirstPersonCamera extends PerspectiveCamera
 			rotate(direction.cpy().crs(Vector3.Y), 1);
 		}
 
-		// correct the vertical height
-		position.y = cameraVerticalHeight;
-
 		// get the velocity of the camera
 		cameraVelocity.x = position.x / oldPosition.x;
 		cameraVelocity.y = position.y / oldPosition.y;

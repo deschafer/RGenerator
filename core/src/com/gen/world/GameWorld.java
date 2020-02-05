@@ -1,14 +1,10 @@
 package com.gen.world;
 
-import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.PerspectiveCamera;
-import com.badlogic.gdx.graphics.g3d.Material;
 import com.badlogic.gdx.graphics.g3d.attributes.ColorAttribute;
 import com.badlogic.gdx.graphics.g3d.environment.DirectionalLight;
 import com.gen.camera.FirstPersonCamera;
-import com.gen.component.RoomComponent;
 import com.gen.game.RGenerator;
-import com.gen.object.GameObject;
+import com.gen.parsing.RoomParser;
 import com.gen.scene.Scene;
 
 public class GameWorld extends World
@@ -19,11 +15,9 @@ public class GameWorld extends World
 	public GameWorld(Scene scene)
 	{
 		super(scene);
-		Material texturedWallMaterial = new Material(ColorAttribute.createDiffuse(Color.WHITE));
-		GameObject newObject = new GameObject(scene, "Room");
-		newObject.addComponent(new RoomComponent(newObject, this, 10,10,10,0,0,
-			   0,texturedWallMaterial,texturedWallMaterial,texturedWallMaterial));
 
+		RoomParser parser = new RoomParser();
+		parser.parseAndGeneratorRoom(this,"room.json");
 	}
 
 	@Override

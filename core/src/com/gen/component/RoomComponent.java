@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.g3d.Material;
 import com.badlogic.gdx.graphics.g3d.Model;
 import com.badlogic.gdx.graphics.g3d.utils.ModelBuilder;
 import com.badlogic.gdx.math.Matrix4;
+import com.badlogic.gdx.math.Vector3;
 import com.gen.object.GameObject;
 import com.gen.object.GameObject3D;
 import com.gen.scene.Scene;
@@ -21,6 +22,7 @@ public class RoomComponent extends Component
 	private GameObject3D ceiling;
 	private GameObject3D floor;
 	private ModelBuilder modelBuilder = new ModelBuilder();
+	private Vector3 center = new Vector3();
 
 	private static final float wallDepth = 0.001f;
 
@@ -30,6 +32,7 @@ public class RoomComponent extends Component
 		super(owner);
 		this.parentScene = owner.getParentScene();
 		this.world = world;
+		center.set(centerX, centerY, centerZ);
 		// create each of our objects
 		float xOffset = w / 2;
 		float yOffset = h / 2;
@@ -70,5 +73,10 @@ public class RoomComponent extends Component
 	public void execute(float delta)
 	{
 
+	}
+
+	public Vector3 getCenter()
+	{
+		return new Vector3().set(center);
 	}
 }

@@ -23,6 +23,7 @@
     <orderEntry type="library" name="Gradle: com.badlogicgames.gdx:gdx-controllers-platform:1.9.10:natives-desktop" level="project" />
     <orderEntry type="library" name="Gradle: com.badlogicgames.gdx:gdx-freetype-platform:1.9.10:natives-desktop" level="project" />
     <orderEntry type="library" name="Gradle: com.badlogicgames.gdx:gdx-bullet-platform:1.9.10:natives-desktop" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.code.gson:gson:2.8.6" level="project" />
     <orderEntry type="library" name="Gradle: com.badlogicgames.gdx:gdx-controllers:1.9.10" level="project" />
     <orderEntry type="library" name="Gradle: com.badlogicgames.gdx:gdx-box2d:1.9.10" level="project" />
     <orderEntry type="library" name="Gradle: com.badlogicgames.gdx:gdx-freetype:1.9.10" level="project" />

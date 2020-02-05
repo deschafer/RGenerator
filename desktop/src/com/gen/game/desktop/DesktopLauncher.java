@@ -9,8 +9,8 @@ public class DesktopLauncher {
 	public static void main (String[] arg) {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 		config.resizable = false;
-		config.width = 1920;
-		config.height = 1080;
+		config.width = 1440;
+		config.height = 900;
 		config.title = "RGenerator";
 
 		Game myGame = new RGenerator(config.width, config.height);

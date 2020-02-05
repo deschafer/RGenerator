@@ -2,6 +2,7 @@ package com.gen.game;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.Texture;
 import com.gen.scene.GameScene;
 import com.gen.scene.Scene;
 
@@ -25,6 +26,11 @@ public class RGenerator extends AbstractGame
 	public void create()
 	{
 		// load all data here
+		RAssetManager.manager.load(RAssetManager.woodOne, Texture.class);
+		RAssetManager.manager.load(RAssetManager.woodTwo, Texture.class);
+		RAssetManager.manager.load(RAssetManager.plastic, Texture.class);
+		RAssetManager.manager.load(RAssetManager.concrete, Texture.class);
+		RAssetManager.manager.finishLoading();
 
 		super.create();
 
