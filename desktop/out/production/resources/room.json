@@ -1,12 +1,12 @@
 [
   {"class": "Room",
     "name": "csac",
-    "x": 50,
-    "y": 50,
-    "z": 50,
-    "w": 35.89,
-    "h": 150.53,
-    "l": 50.80,
+    "x": 0,
+    "y": 100,
+    "z": 0,
+    "w": 100.89,
+    "h": 100.53,
+    "l": 100.80,
     "texture": "Wood 2.jpg",
     "floor": {"class": "Quad",
       "texture": "Plastic 1.jpg"

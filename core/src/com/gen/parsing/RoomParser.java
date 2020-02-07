@@ -6,6 +6,8 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g3d.Material;
 import com.badlogic.gdx.graphics.g3d.attributes.TextureAttribute;
 import com.badlogic.gdx.math.Vector3;
+import com.gen.boids.Boid;
+import com.gen.camera.FirstPersonCamera;
 import com.gen.component.DecorationComponent;
 import com.gen.component.RoomComponent;
 import com.gen.game.RAssetManager;
@@ -120,8 +122,16 @@ public class RoomParser
 			room.addComponent(decorationComponent);
 		}
 
-		PerspectiveCamera camera = world.getCamera();
+		FirstPersonCamera camera = (FirstPersonCamera) world.getCamera();
 		Vector3 center = roomComponent.getCenter();
 		camera.position.set(center.x, center.y + 3, center.z);
+		camera.setCameraBounds(center.x - record.roomWidth / 2, center.z - record.roomDepth / 2,
+			   record.roomWidth, record.roomDepth, center.y + 3.0f);
+		Boid.worldMin.add(center);
+		Boid.worldMax.add(center);
+		Boid.xBoundsFromOrigin = record.roomWidth / 2;
+		Boid.zBoundsFromOrigin = record.roomDepth / 2;
+
+		Boid.setWorldBounds(center, record.roomWidth / 2, record.roomDepth / 2);
 	}
 }

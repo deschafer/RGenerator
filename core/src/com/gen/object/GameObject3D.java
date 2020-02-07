@@ -9,7 +9,6 @@ import com.gen.scene.Scene;
 // a gameobject with a 3d model associated with it
 public class GameObject3D extends GameObject
 {
-
 	private ModelInstance instance;
 	private boolean visible = true;
 
@@ -46,5 +45,10 @@ public class GameObject3D extends GameObject
 	public void setVisible(boolean visible)
 	{
 		this.visible = visible;
+	}
+
+	public Matrix4 getTransform()
+	{
+		return instance.transform;
 	}
 }
