@@ -3,6 +3,8 @@ package com.gen.game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.gen.networking.Client;
 import com.gen.scene.GameScene;
 import com.gen.scene.Scene;
 
@@ -30,12 +32,19 @@ public class RGenerator extends AbstractGame
 		RAssetManager.manager.load(RAssetManager.woodTwo, Texture.class);
 		RAssetManager.manager.load(RAssetManager.plastic, Texture.class);
 		RAssetManager.manager.load(RAssetManager.concrete, Texture.class);
+		RAssetManager.manager.load(RAssetManager.defaultUISkin, Skin.class);
+		RAssetManager.manager.load(RAssetManager.chatBox, Texture.class);
+		RAssetManager.manager.load(RAssetManager.cursor, Texture.class);
 		RAssetManager.manager.finishLoading();
 
 		super.create();
 
 		// set the screen
 		setActiveScreen(gameScene = new GameScene());
+
+		// create the client so we can communicate with the server
+		Client client = new Client();
+		new Thread(client).start();
 	}
 
 	@Override

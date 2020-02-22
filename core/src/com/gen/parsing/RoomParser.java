@@ -116,9 +116,16 @@ public class RoomParser
 		{
 			Material decorationMaterial = new Material(TextureAttribute.createDiffuse((Texture) RAssetManager.manager.get(decRecord.texture)));
 
-			DecorationComponent decorationComponent = new DecorationComponent(room, world, new Vector3().set(decRecord.bottomLeft),
-				   new Vector3().set(decRecord.bottomRight), new Vector3().set(decRecord.topLeft), new Vector3().set(decRecord.topRight),
-				   decorationMaterial);
+			DecorationComponent decorationComponent = null;
+			try
+			{
+				decorationComponent = new DecorationComponent(room, world, new Vector3().set(decRecord.bottomLeft),
+					   new Vector3().set(decRecord.bottomRight), new Vector3().set(decRecord.topLeft), new Vector3().set(decRecord.topRight),
+					   decorationMaterial);
+			} catch (Exception e)
+			{
+				e.printStackTrace();
+			}
 			room.addComponent(decorationComponent);
 		}
 
